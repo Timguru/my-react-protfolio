@@ -1,9 +1,6 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
-/protfolio-front/node_modules
 /protfolio-backend/node_modules
-
+/protfolio-front/node_modules
 /.pnp
 .pnp.js
 
@@ -11,7 +8,7 @@
 /coverage
 
 # production
-/build
+/protfolio-front/build
 
 # misc
 .DS_Store
