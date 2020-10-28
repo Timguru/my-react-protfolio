@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
 import Navbar from './Navbar'
 import './asset/css/Header.css'
 import headerbg from './asset/img/headerbg.jpg'
 import headerbg2 from './asset/img/headerbg2.jpg'
 import headerbg3 from './asset/img/headerbg3.jpg'
-import $ from 'jquery'
+// import $ from 'jquery'
 
 function Header() {
-    const bgArr = [headerbg, headerbg2, headerbg3]
+    const [bg, setBg] = useState()
 
-    // useEffect(()=>{
+    useEffect(()=>{
     //     $('.slideshow > div:gt(0)').hide()
 
     //     setInterval(function(){
@@ -20,22 +20,16 @@ function Header() {
     //         .end()
     //         .appendTo('.slideshow')
     //     },3000)
-    // },[])
+    const bgArr = [headerbg, headerbg2, headerbg3]
+    const random = Math.floor(Math.random()* bgArr.length)
+    setBg(bgArr[random])
+
+    },[bg])
  
     return (
         <div className="header">
-            <div className="slideshow">
-                {bgArr.map((bg, i)=>{
-                    return(
-                        <div>
-                        <img className="slideshow__img" itemType="image/jpeg" key={i} src={bg} alt="headerbg"/>
-                        </div> 
-                    )
-                })}
-                <div>
-            </div>
+            <img className="header__bg" src={bg} alt=""/>
             <Navbar/>
-            </div>
         </div>
     )
 }
