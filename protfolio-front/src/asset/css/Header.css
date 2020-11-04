@@ -53,6 +53,7 @@
 @media (min-width: 10px) and (max-width: 767px) {
   .nav__container {
     padding: 0;
+    background: transparent !important;
   }
 }
 /*# sourceMappingURL=Header.css.map */

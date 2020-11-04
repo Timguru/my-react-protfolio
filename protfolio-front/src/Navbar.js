@@ -1,23 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './asset/css/Navbar.css'
 import { Link } from 'react-router-dom'
-import {Button, IconButton} from '@material-ui/core'
 
 function Navbar() {
+    //boolean values
     const[toggleClose , setToggleClose] = useState(false)
-    const hamState =()=> setToggleClose(!toggleClose)
+    const[nav, setNav] = useState(false)
+    //change the boolean value of toggleClose to the opposite of the boolean value
+    const hamState = () => setToggleClose(!toggleClose)
+    const showNav = () => setNav(!nav)
+    // set all the hamburger functions
+    const hamburgerFn = ()=>{
+        hamState()
+        showNav()
+    }
     return (
         <div className="navbar">
-          <div className="hamburger" onClick={hamState}>
+            <div className="hamburger" onClick={hamburgerFn}>
               <span className={toggleClose ? `hamburger__one active` : 'hamburger__one'}></span>
               <span className={toggleClose ? `hamburger__two active` : 'hamburger__two'}></span>
               <span className={toggleClose ? `hamburger__three active` : 'hamburger__three'}></span>
           </div>
-           
+
             <nav className="nav">
-                <ul className="nav__links">
+                <ul className={nav ? `nav__links show` : `nav__links`}>
                     <li>
-                        <Link className="nav__link" to="/">Home</Link>
+                        <Link to="/" className="nav__link">Home</Link>
                     </li>
                     <li>
                         <Link to="#about" className="nav__link">About Me</Link>
@@ -32,7 +40,6 @@ function Navbar() {
             </nav>
         </div>
     )
-
 }
 
 export default Navbar

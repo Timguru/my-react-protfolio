@@ -12,9 +12,14 @@
     flex-wrap: wrap;
 }
 
+.details__top > .name {
+    font-size: 40px;
+}
+
 .description {
     display: flex;
-    font-size: 2;
+    font-size: 23px;
+    margin: auto;
 }
 .MuiIconButton-root {
     color: #fff;
