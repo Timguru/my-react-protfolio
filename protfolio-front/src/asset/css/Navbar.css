@@ -120,6 +120,9 @@
     -webkit-transition: all 1.2s ease;
     transition: all 1.2s ease;
   }
+  .hamburger {
+    position: absolute;
+  }
   .nav__links.show {
     -webkit-clip-path: circle(1000px at 90% -10px);
             clip-path: circle(1000px at 90% -10px);

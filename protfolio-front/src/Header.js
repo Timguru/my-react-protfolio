@@ -9,16 +9,21 @@ function Header() {
 
     useEffect(()=>{
         const navbar = document.getElementById('nav-container')
-        window.onscroll = function(){scrollFn()}
-        function scrollFn(){
-            if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
-                navbar.style.padding = "15px"
-                navbar.style.backgroundColor = "rgba(252, 102, 51, 1)"
-            }else{
-                navbar.style.padding = "30px"
-                navbar.style.backgroundColor = "rgba(252, 102, 51, 0.5)"
+        const query = window.matchMedia("(min-width: 768px)")
+        window.onscroll = function(){scrollFn(query)}
+        function scrollFn(x){
+            if(x.matches) {
+                if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+                    navbar.style.padding = "15px"
+                    navbar.style.backgroundColor = "rgba(252, 102, 51, 1)"
+                }else{
+                    navbar.style.padding = "30px"
+                    navbar.style.backgroundColor = "rgba(252, 102, 51, 0.5)"
+                }
             }
         }
+
+        query.addEventListener("change", scrollFn)
        
     },[])
 

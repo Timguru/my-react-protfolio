@@ -53,7 +53,17 @@
 @media (min-width: 10px) and (max-width: 767px) {
   .nav__container {
     padding: 0;
-    background: transparent !important;
+    background: none;
+    height: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 /*# sourceMappingURL=Header.css.map */
