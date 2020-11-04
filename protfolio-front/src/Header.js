@@ -1,35 +1,43 @@
 import React, { useEffect, useState} from 'react'
 import Navbar from './Navbar'
 import './asset/css/Header.css'
-import headerbg from './asset/img/headerbg.jpg'
-import headerbg2 from './asset/img/headerbg2.jpg'
-import headerbg3 from './asset/img/headerbg3.jpg'
-// import $ from 'jquery'
+import DetailProp from './DetailProp'
+import videoBg from './asset/videobg/video.mp4'
 
 function Header() {
-    const [bg, setBg] = useState()
+    const vid = () => {return false}
 
     useEffect(()=>{
-    //     $('.slideshow > div:gt(0)').hide()
+        const navbar = document.getElementById('nav-container')
+        window.onscroll = function(){scrollFn()}
+        function scrollFn(){
+            if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+                navbar.style.padding = "15px"
+                navbar.style.backgroundColor = "rgba(252, 102, 51, 1)"
+            }else{
+                navbar.style.padding = "30px"
+                navbar.style.backgroundColor = "rgba(252, 102, 51, 0.5)"
+            }
+        }
+       
+    },[])
 
-    //     setInterval(function(){
-    //         $('.slideshow > div:first')
-    //         .fadeOut(1000)
-    //         .next()
-    //         .fadeIn(1000)
-    //         .end()
-    //         .appendTo('.slideshow')
-    //     },3000)
-    const bgArr = [headerbg, headerbg2, headerbg3]
-    const random = Math.floor(Math.random()* bgArr.length)
-    setBg(bgArr[random])
-
-    },[bg])
- 
     return (
         <div className="header">
-            <img className="header__bg" src={bg} alt=""/>
-            <Navbar/>
+            {/* <img className="header__bg" src={bg} alt=""/> */}
+            <video className="header__bg" onContextMenu={vid} playsInline autoPlay loop muted src={videoBg} type="video/mp4"/>
+            <div className="nav__container" id="nav-container">
+                <Navbar/>
+            </div>
+            <div className="header__details">
+            <DetailProp
+            linkedln="#"
+            github="#"
+            facebook="#"
+            instagram="#"
+            whatsapp="#"/>
+            </div>
+           
         </div>
     )
 }

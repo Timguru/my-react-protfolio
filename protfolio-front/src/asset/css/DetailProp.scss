@@ -1,0 +1,30 @@
+.details {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+.details__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.description {
+    display: flex;
+    font-size: 2;
+}
+.MuiIconButton-root {
+    color: #fff;
+}
+
+.detail__icon {
+    color : #fff;
+}
+
+
+.details__bottom {
+    margin-top : 15px;
+}

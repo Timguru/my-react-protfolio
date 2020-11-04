@@ -12,12 +12,6 @@ function App() {
            <Route exact path="/">
              <Header/>
              <About/>
-             <About/>
-             <About/>
-             <About/>
-             <About/>
-             <About/>
-             <About/>
            </Route>
            <Route></Route>
          </Switch>

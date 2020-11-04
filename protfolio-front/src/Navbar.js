@@ -1,40 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import './asset/css/Navbar.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import {Button, IconButton} from '@material-ui/core'
 
 function Navbar() {
-    const [nav, setNav] = useState(false)
-    useEffect(()=>{
-        const navbar = document.getElementById('nav-links')
-        window.onscroll = ()=>{scrollFn()}
-
-        const scrollFn = ()=>{
-            if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                navbar.style.padding = "15px"
-                navbar.style.backgroundColor ="rgba(0,0,0,0.98)"
-            }else{
-                navbar.style.padding = "30px"
-                navbar.style.backgroundColor ="rgba(0,0,0,0.5)"
-            }
-        }
-    },[])
+    const[toggleClose , setToggleClose] = useState(false)
+    const hamState =()=> setToggleClose(!toggleClose)
     return (
         <div className="navbar">
-               <div className={`hamburger`}>
-                    <span></span>
-                </div> 
-            <div className={`navbar__inner`}>
-                <div className="navbar__close"><span>&times;</span></div>
-                <ul className="nav__links" id="nav-links">
-                    <Link to="/" className="nav__link">Home</Link>
-                    <Link to="/" className="nav__link">About Me</Link>
-                    <Link to="/" className="nav__link">Testimonials</Link>
-                    <Link to="/contact" className="nav__link">Contact</Link>
+          <div className="hamburger" onClick={hamState}>
+              <span className={toggleClose ? `hamburger__one active` : 'hamburger__one'}></span>
+              <span className={toggleClose ? `hamburger__two active` : 'hamburger__two'}></span>
+              <span className={toggleClose ? `hamburger__three active` : 'hamburger__three'}></span>
+          </div>
+           
+            <nav className="nav">
+                <ul className="nav__links">
+                    <li>
+                        <Link className="nav__link" to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="#about" className="nav__link">About Me</Link>
+                    </li>
+                    <li>
+                        <Link to="/" className="nav__link">Testimonials</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact" className="nav__link">Contact Me</Link>
+                    </li>
                 </ul>
-
-            </div>
+            </nav>
         </div>
     )
+
 }
 
 export default Navbar
