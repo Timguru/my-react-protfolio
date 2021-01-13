@@ -1,0 +1,31 @@
+.services {
+    margin-top: 40px;
+}
+
+.services__top {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services__top > hr {
+    height: 8px;
+    background-color: #ff5721;
+    margin-bottom: 30px;
+    outline : none;
+    border: #ff5721;
+    width : 30%;
+    
+}
+
+.services__top > h1 {
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.services__main {
+    display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}

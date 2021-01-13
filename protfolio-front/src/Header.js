@@ -1,8 +1,9 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect} from 'react'
 import Navbar from './Navbar'
 import './asset/css/Header.css'
 import DetailProp from './DetailProp'
 import videoBg from './asset/videobg/video.mp4'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function Header() {
     const vid = () => {return false}
@@ -41,8 +42,11 @@ function Header() {
             facebook="#"
             instagram="#"
             whatsapp="#"/>
+             
             </div>
-           
+            <div className="header__bottom">
+            <ExpandMoreIcon style={{ color : '#fff'}} fontSize="large"/>
+            </div>
         </div>
     )
 }

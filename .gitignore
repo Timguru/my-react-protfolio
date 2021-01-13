@@ -1,5 +1,5 @@
 # dependencies
-/protfolio-backend/node_modules
+/server/node_modules
 /protfolio-front/node_modules
 /.pnp
 .pnp.js
@@ -9,6 +9,10 @@
 
 # production
 /protfolio-front/build
+
+#logs
+/protfolio-front/debug.log
+/server/debug.log
 
 # misc
 .DS_Store

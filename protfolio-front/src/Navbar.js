@@ -3,17 +3,20 @@ import './asset/css/Navbar.css'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
-    //boolean values
     const[toggleClose , setToggleClose] = useState(false)
     const[nav, setNav] = useState(false)
-    //change the boolean value of toggleClose to the opposite of the boolean value
+    const[rmv, setRmv] = useState(true)
+    
+    
     const hamState = () => setToggleClose(!toggleClose)
     const showNav = () => setNav(!nav)
-    // set all the hamburger functions
+    const showLinks = ()=> setRmv(!rmv)
     const hamburgerFn = ()=>{
         hamState()
         showNav()
+        showLinks()
     }
+
     return (
         <div className="navbar">
             <div className="hamburger" onClick={hamburgerFn}>
@@ -24,17 +27,17 @@ function Navbar() {
 
             <nav className="nav">
                 <ul className={nav ? `nav__links show` : `nav__links`}>
-                    <li>
-                        <Link to="/" className="nav__link">Home</Link>
+                    <li className="links">
+                        <Link to="/" className={`nav__link ${rmv  ? `rmvdli` : ``}`}>Home</Link>
                     </li>
-                    <li>
-                        <Link to="#about" className="nav__link">About Me</Link>
+                    <li className="links">
+                        <Link to="#about" className={`nav__link ${rmv  ? `rmvdli` : ``}`}>About Me</Link>
                     </li>
-                    <li>
-                        <Link to="/" className="nav__link">Testimonials</Link>
+                    <li className="links">
+                        <Link to="/" className={`nav__link ${rmv  ? `rmvdli` : ``}`}>Testimonials</Link>
                     </li>
-                    <li>
-                        <Link to="/contact" className="nav__link">Contact Me</Link>
+                    <li className="links">
+                        <Link to="/contact" className={`nav__link ${rmv  ? `rmvdli` : ``}`}>Contact Me</Link>
                     </li>
                 </ul>
             </nav>

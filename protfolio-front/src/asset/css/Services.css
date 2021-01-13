@@ -1,0 +1,42 @@
+.services {
+  margin-top: 40px;
+}
+
+.services__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.services__top > hr {
+  height: 8px;
+  background-color: #ff5721;
+  margin-bottom: 30px;
+  outline: none;
+  border: #ff5721;
+  width: 30%;
+}
+
+.services__top > h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.services__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=Services.css.map */

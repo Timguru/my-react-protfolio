@@ -1,10 +1,13 @@
 import React from 'react'
+import './asset/css/About.css'
 
 function About() {
     return (
         <div className="about" id="about">
-            <h1>This is the About</h1>
-            <a href="/">Click me</a>
+            <h1>Hello 👋 </h1>
+            <h2>I am Timothy</h2>
+            <p>I am a software engineer and also a proficient JavaScript developer</p>
+            
         </div>
     )
 }
